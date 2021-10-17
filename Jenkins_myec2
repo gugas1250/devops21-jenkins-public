@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+        stage (‘Checkout’) {
+            steps {
+                git branch: 'main', url: 'git@github.com:gugas1250/devops21-jenkins-public.git'
+            }
+        }
+
+        stage (‘CreateEnv’) {
+            steps {
+                sh ‘’’#!/bin/bash
+                        aws ec2 run-instances --image-id ami-013a129d325529d4d  --count 1 --instance-type t2.micro --key-name new-gugas --region us-west-2
+
+                ‘’’
+            }
+        }
+    }
+
+}
