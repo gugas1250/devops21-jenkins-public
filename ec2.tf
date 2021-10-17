@@ -8,16 +8,16 @@ terraform {
 }
 
 provider "aws" {
-  region     = "us-east-1"
+  region     = "us-west-2"
   #shared_credentials_file = "/var/lib/jenkins/.aws/credentials"
   profile = "default"
 }
 
 resource "aws_instance" "my-first-ec2" {
-  ami           = "ami-0b0af3577fe5e3532"
+  ami           = " ami-013a129d325529d4d "
   instance_type = "t2.micro"
   tags = {
     Name  = "myec2-1"
-    Owner = "Vakhob"
+    Owner = "paulo"
   }
 }
