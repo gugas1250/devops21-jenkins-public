@@ -5,6 +5,7 @@ pipeline {
         
         stage('Checkout') {
             steps {
+               git@github.com:gugas1250/devops21-jenkins-public.git
                
             }
         }
